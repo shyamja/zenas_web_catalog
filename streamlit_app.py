@@ -1,29 +1,3 @@
-if you are on
-us-west-2.aws
-This region and cloud
-is the OG so it
-doesn’t need to be
-stated
-warehouse = "compute_wh"
-database = "ZENAS_ATHLEISURE_DB"
-schema = "PRODUCTS"
-Copy this code into the
-main py file and run to
-make sure
-requirements, secrets,
-and connection are all
-working together.
-Edit the secrets file until
-you get a successful
-connection.
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(),
-CURRENT_REGION()")
-my_data_row = my_cur.fetchone()
-streamlit.text("Hello from Snowflake:")
-streamlit.text(my_data_row)
-FINAL Code we used for Zena’s Web Catalog Prototype
 import streamlit
 import snowflake.connector
 import pandas
